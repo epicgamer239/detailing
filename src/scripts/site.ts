@@ -91,25 +91,15 @@ function initForms() {
     const retryBtn = wrapper.querySelector<HTMLButtonElement>('.contact-form__retry');
     if (!form || !successEl || !errorEl) return;
 
-    form.addEventListener('submit', async (e) => {
+    // Demo mode: forms are disconnected (no Formspree / no network submit).
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const submitBtn = form.querySelector<HTMLButtonElement>('.contact-form__submit');
-      if (submitBtn) {
-        submitBtn.classList.add('is-submitting');
-        submitBtn.disabled = true;
-      }
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { Accept: 'application/json' },
-        });
-        if (!response.ok) throw new Error('fail');
-        form.style.display = 'none';
-        successEl.style.display = 'block';
-      } catch {
-        form.style.display = 'none';
-        errorEl.style.display = 'block';
+      form.style.display = 'none';
+      errorEl.style.display = 'block';
+      const msg = errorEl.querySelector('p') || errorEl;
+      if (msg) {
+        msg.textContent =
+          'Online form is in demo mode. Call or text (703) 936-1803 and we will get back to you fast.';
       }
     });
 

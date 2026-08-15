@@ -1,26 +1,26 @@
-# Cody's Auto Detailing (clone)
+# AJ Car Detailing
 
-Local Astro rebuild of [codysautodetailing.com](https://codysautodetailing.com/).
+Astro site for **AJ Car Detailing** (Ashburn, VA).
 
-## Run
+## Live site
+
+https://epicgamer239.github.io/detailing/
+
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the URL Astro prints (usually `http://localhost:4321`).
+Dev URL includes the Pages base path: http://localhost:4321/detailing/
 
-## Pages
+## Deploy
 
-- `/` — Home
-- `/about` — About
-- `/services` — Services & work
-- `/service-area` — Service area
-- `/contact` — Contact
+Pushes to `main` deploy via GitHub Actions → GitHub Pages.
 
 ## Notes
 
-- Booking iframe uses Cody’s live Urable widget.
-- Contact forms still point at the original Formspree endpoint (submissions go to Cody unless you change it).
-- Media assets were downloaded from the live site for local fidelity.
+- Phone: (703) 936-1803 · Email: ajcardetailz@gmail.com
+- Booking + forms are demo-only until real embeds are added
+- Work media: `public/images/work` and `public/videos`

@@ -1,0 +1,101 @@
+---
+/** Non-functional booking UI for demos — replace with real embed later. */
+const packages = [
+  { name: 'Interior Detail', time: '2–4 hrs', price: 'From $175', blurb: 'Deep clean, vacuum, leather care, glass and trim.' },
+  { name: 'Exterior Detail', time: '2–3 hrs', price: 'From $150', blurb: 'Hand wash, wheels, decon, dry and dress.' },
+  { name: 'Full Detail', time: '4–8 hrs', price: 'From $299', blurb: 'Inside and out. The complete reset.', featured: true },
+  { name: 'Paint Correction', time: '1–2 days', price: 'Quote', blurb: 'Machine polish. Swirls out, gloss back.' },
+  { name: 'Ceramic Coating', time: '1–3 days', price: 'Quote', blurb: 'Long-lasting protection after correction.' },
+];
+
+const days = [
+  { label: 'Mon', date: '17' },
+  { label: 'Tue', date: '18' },
+  { label: 'Wed', date: '19', active: true },
+  { label: 'Thu', date: '20' },
+  { label: 'Fri', date: '21' },
+  { label: 'Sat', date: '22' },
+];
+
+const times = ['8:00 AM', '10:00 AM', '12:00 PM', '2:00 PM', '4:00 PM'];
+---
+
+<div class="booking-demo" aria-label="Online booking preview">
+  <div class="booking-demo__bar">
+    <div class="booking-demo__brand">
+      <img src="/detailing/images/aj-car-detailing-logo.png" alt="" width="36" height="36" />
+      <div>
+        <strong>AJ Car Detailing</strong>
+        <span>Ashburn · Mobile service</span>
+      </div>
+    </div>
+    <span class="booking-demo__badge">Demo preview</span>
+  </div>
+
+  <div class="booking-demo__body">
+    <div class="booking-demo__col">
+      <h3 class="booking-demo__step">1. Choose a package</h3>
+      <div class="booking-demo__packages" role="list">
+        {packages.map((pkg) => (
+          <button
+            type="button"
+            class:list={['booking-demo__pkg', { 'is-featured': pkg.featured, 'is-selected': pkg.featured }]}
+            role="listitem"
+            tabindex="-1"
+            aria-disabled="true"
+          >
+            <div class="booking-demo__pkg-top">
+              <span class="booking-demo__pkg-name">{pkg.name}</span>
+              <span class="booking-demo__pkg-price">{pkg.price}</span>
+            </div>
+            <p>{pkg.blurb}</p>
+            <span class="booking-demo__pkg-time">{pkg.time}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="booking-demo__col booking-demo__col--side">
+      <h3 class="booking-demo__step">2. Vehicle &amp; schedule</h3>
+
+      <label class="booking-demo__field">
+        <span>Vehicle size</span>
+        <select disabled aria-disabled="true">
+          <option>Sedan / Coupe</option>
+          <option selected>SUV / Crossover</option>
+          <option>Truck / Van</option>
+        </select>
+      </label>
+
+      <div class="booking-demo__field">
+        <span>Date</span>
+        <div class="booking-demo__days" aria-hidden="true">
+          {days.map((d) => (
+            <div class:list={['booking-demo__day', { 'is-active': d.active }]}>
+              <em>{d.label}</em>
+              <strong>{d.date}</strong>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="booking-demo__field">
+        <span>Time</span>
+        <div class="booking-demo__times" aria-hidden="true">
+          {times.map((t, i) => (
+            <div class:list={['booking-demo__time', { 'is-active': i === 1 }]}>{t}</div>
+          ))}
+        </div>
+      </div>
+
+      <button type="button" class="booking-demo__cta" disabled aria-disabled="true">
+        Continue to checkout
+      </button>
+      <p class="booking-demo__note">
+        Online booking is coming soon. For now, call or text
+        <a href="tel:+17039361803">(703) 936-1803</a>
+        to lock in a time.
+      </p>
+    </div>
+  </div>
+</div>
