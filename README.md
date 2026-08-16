@@ -4,7 +4,7 @@ Astro site for **AJ Car Detailing** (Ashburn, VA).
 
 ## Live site
 
-Production deploys from `main` on [Vercel](https://vercel.com).
+**https://detailing.vercel.app** — production deploys from `main` on Vercel.
 
 ## Run locally
 
