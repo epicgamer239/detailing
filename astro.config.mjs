@@ -3,6 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://epicgamer239.github.io',
-  base: '/detailing',
+  // Updated after first Vercel deploy if the production URL differs
+  site: 'https://detailing.vercel.app',
 });

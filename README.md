@@ -4,7 +4,7 @@ Astro site for **AJ Car Detailing** (Ashburn, VA).
 
 ## Live site
 
-https://epicgamer239.github.io/detailing/
+Production deploys from `main` on [Vercel](https://vercel.com).
 
 ## Run locally
 
@@ -13,11 +13,9 @@ npm install
 npm run dev
 ```
 
-Dev URL includes the Pages base path: http://localhost:4321/detailing/
-
 ## Deploy
 
-Pushes to `main` deploy via GitHub Actions → GitHub Pages.
+Connected to the GitHub repo — pushes to `main` deploy automatically on Vercel.
 
 ## Notes
 
